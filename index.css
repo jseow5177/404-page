@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+  --color-primary: #333333;
+  --color-primary-variant: #4f4f4f;
+  --color-secondary: #bdbdbd;
+  --color-white: #ffffff;
+
+  --transition: all 400ms ease;
+
+  --width-lg: 60%;
+  --width-sm: 100%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  overflow: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Space Mono", monospace;
+  padding: 2rem 6rem;
+}
+
+/* How to have div fill up space between header and footer? */
+/* https://stackoverflow.com/questions/206652/how-to-create-div-to-fill-all-space-between-header-and-footer-div */
+header,
+footer {
+  flex: none;
+}
+
+/* ========== CONTAINERS ========== */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.container__img {
+  align-items: center;
+  width: var(--width-lg);
+}
+
+.container__text {
+  gap: 1.8rem;
+  width: calc(100% - var(--width-lg));
+}
+
+/* ========== HEADER ========== */
+
+header > h1 {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 24px;
+}
+
+/* ========== MAIN ========== */
+
+main {
+  display: flex;
+  flex: auto;
+}
+
+.main__img {
+  height: 448;
+  width: 540px;
+}
+
+.main__title {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 95px;
+}
+
+.main__text {
+  color: var(--color-primary-variant);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 35px;
+  width: var(--width-lg);
+}
+
+.main__btn {
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  color: var(--color-white);
+  cursor: pointer;
+  display: inline-block;
+  padding: 1.2rem 1rem;
+  text-transform: uppercase;
+  transition: var(--transition);
+  width: max-content;
+}
+
+.main__btn:hover {
+  background-color: var(--color-primary-variant);
+  border-color: transparent;
+}
+
+/* ========== FOOTER ========== */
+
+footer {
+  width: 100%;
+  text-align: center;
+}
+
+footer > p {
+  color: var(--color-secondary);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* ========== MEDIA QUERIES (SMALL DEVICES) ========== */
+
+@media screen and (max-width: 600px) {
+  body {
+    padding: 2rem 1.8rem;
+  }
+
+  main {
+    flex-direction: column; /* to stack containers vertically */
+    margin: 2rem 0;
+  }
+
+  .main__img {
+    width: 286px;
+    height: 238px;
+  }
+
+  .main__title {
+    font-size: 48px;
+    line-height: 60px;
+  }
+
+  .main__text {
+    font-size: 18px;
+    width: var(--width-sm);
+  }
+
+  .container__img,
+  .container__text {
+    width: var(--width-sm);
+  }
+
+  footer > p {
+    font-size: 13px;
+  }
+}
