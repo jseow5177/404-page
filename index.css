@@ -132,6 +132,24 @@ footer > p {
   line-height: 22px;
 }
 
+/* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */
+
+@media screen and (max-width: 1024px) {
+  main {
+    flex-direction: column; /* to stack containers vertically */
+    margin: 2rem 0;
+  }
+
+  .main__text {
+    width: var(--width-sm);
+  }
+
+  .container__img,
+  .container__text {
+    width: var(--width-sm);
+  }
+}
+
 /* ========== MEDIA QUERIES (SMALL DEVICES) ========== */
 
 @media screen and (max-width: 600px) {
